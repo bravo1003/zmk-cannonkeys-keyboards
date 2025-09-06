@@ -10,15 +10,19 @@
 
 / {
     behaviors {
-#if ZMK_BEHAVIOR_OMIT(TILDEESC)
-        /omit-if-no-ref/
-#endif
         tildeesc: tilde_escape {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp TILDE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             display-name = "Tilde/Escape";
+        };
+        backspdel: backsp_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            display-name = "Backspace/Delete";
         };
     };
 };
